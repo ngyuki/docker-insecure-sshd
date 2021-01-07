@@ -1,5 +1,7 @@
 # insecure openssh server for port forwarding  via stdio
 
+[ngyuki/insecure-sshd - Docker Hub](https://hub.docker.com/repository/docker/ngyuki/insecure-sshd/general)
+
 ## Demo
 
 [![asciicast](https://asciinema.org/a/Wxe9vptDncILTtI3VkCMrLzBt.svg)](https://asciinema.org/a/Wxe9vptDncILTtI3VkCMrLzBt)
@@ -17,7 +19,7 @@ services:
     command: [ tail, -f, /dev/null ]
 ```
 
-```
+```sh
 # console 1
 nc -lkv 5000
 
