@@ -27,9 +27,13 @@ nc -lkv 5000
 docker-compose up
 
 # console 3
-ssh -o ProxyCommand='docker-compose exec -T fwd nc localhost 22' \
-    -o StrictHostKeyChecking=no \
-    -R 5000:localhost:5000 -N -g root@localhost
+ssh root@localhost -C -N -g \
+  -o ProxyCommand='docker-compose exec -T fwd nc localhost 22' \
+  -o ExitOnForwardFailure=yes \
+  -o PermitLocalCommand=yes \
+  -o LocalCommand='echo ok' \
+  -o StrictHostKeyChecking=no \
+  -R 5000:localhost:5000
 
 # console 4
 docker-compose exec app nc -v fwd 5000
