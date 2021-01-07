@@ -8,4 +8,8 @@ RUN passwd root -d
 
 COPY sshd_config /etc/ssh/sshd_config
 
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT [ "/entrypoint.sh" ]
+
 CMD [ "/usr/sbin/sshd",  "-D", "-e" ]
