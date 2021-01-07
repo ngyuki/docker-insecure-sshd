@@ -1,0 +1,13 @@
+Protocol 2
+HostKey /etc/ssh/ssh_host_ed25519_key
+HostKey /etc/ssh/ssh_host_rsa_key
+StrictModes no
+PermitRootLogin yes
+PermitEmptyPasswords yes
+AllowTcpForwarding yes
+GatewayPorts yes
+Compression no
+UseDNS no
+ClientAliveInterval 15
+ClientAliveCountMax 3
+LogLevel INFO

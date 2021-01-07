@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  fwd:
+    image: ngyuki/insecure-sshd
+    build: .
+
+  app:
+    image: alpine
+    command: [ tail, -f, /dev/null ]
